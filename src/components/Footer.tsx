@@ -21,7 +21,7 @@ const Footer = () => {
               className="object-cover w-12 h-12 rounded-full"
             />
             <span className="text-2xl font-serif font-medium text-foreground">
-              Feed Paws
+              Feed Paws Initiative
             </span>
           </motion.div>
 
