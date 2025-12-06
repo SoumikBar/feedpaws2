@@ -1,19 +1,11 @@
 // src/components/VolunteerOfYear.jsx
 import React from "react";
-import "./VolunteerOfYear.css"; // add styling below
-
-/**
- * Props:
- *  - winner: { name, photo, year, bio, achievements: [] }
- *  - others: [{ name, photo, year }]
- *
- * If you don't pass props, component will use the defaultWinner below.
- */
+import "./VolunteerOfYear.css";
 
 const defaultWinner = {
   name: "Aarti Sharma",
-  photo: "/images/volunteer-of-year/aarti.jpg", // put image in public/images/volunteer-of-year/
-  year: 2025,
+  photo: "/images/volunteer-of-year/aarti.jpg",
+  year: 2025,  // FIXED YEAR
   bio: "Aarti led community feeding programs across 7 locations, recruited 120 volunteers, and introduced the nightly checklist which improved reliability by 40%.",
   achievements: [
     "Led 120 volunteers",
@@ -26,7 +18,11 @@ export default function VolunteerOfYear({ winner = defaultWinner, others = [] })
   return (
     <section className="voy-section" aria-labelledby="voy-heading">
       <div className="voy-container">
-        <h2 id="voy-heading" className="voy-title">Volunteer of the Year — {winner.year}</h2>
+
+        {/* FORCE YEAR 2025 */}
+        <h2 id="voy-heading" className="voy-title">
+          Volunteer of the Year — 2025
+        </h2>
 
         <div className="voy-main">
           <div className="voy-photo-wrap">
@@ -42,20 +38,17 @@ export default function VolunteerOfYear({ winner = defaultWinner, others = [] })
             <h3 className="voy-name">{winner.name}</h3>
             <p className="voy-bio">{winner.bio}</p>
 
-            <ul className="voy-achievements" aria-label="Key achievements">
-              {winner.achievements.map((a, i) => (
-                <li key={i} className="voy-achievement">• {a}</li>
-              ))}
-            </ul>
-
-            <div className="voy-cta">
-              <button className="voy-button" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-                Nominate next year
-              </button>
-            </div>
+            {winner.achievements && (
+              <ul className="voy-achievements" aria-label="Key achievements">
+                {winner.achievements.map((a, i) => (
+                  <li key={i} className="voy-achievement">• {a}</li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
 
+        {/* past winners remain optional */}
         {others.length > 0 && (
           <div className="voy-others">
             <h4>Past Winners</h4>
@@ -72,6 +65,7 @@ export default function VolunteerOfYear({ winner = defaultWinner, others = [] })
             </div>
           </div>
         )}
+
       </div>
     </section>
   );
