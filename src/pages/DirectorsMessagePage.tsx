@@ -1,9 +1,19 @@
+// src/pages/DirectorsMessagePage.tsx
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
-import VolunteerOfYear from "../components/VolunteerOfYear";
-
+import VolunteerOfYear, { Winner } from "../components/VolunteerOfYear";
 
 const DirectorsMessagePage = () => {
+  // Sumedha's story as requested (no achievements)
+  const winner: Winner = {
+    name: "Sumedha Dev",
+    // optional: add a photo at /public/images/volunteer-of-year/sumedha.jpg
+    // photo: "/images/volunteer-of-year/sumedha.jpg",
+    bio:
+      "I had always dreamed of starting my own NGO... It was always something I wanted to do for manyyy yearss.. But the moment our director sir (Mr. Sayan Ghosh) told me he was creating something similar, I joined him without any second thought. I didn't come here to dominate or seek control, I came here to work, to contribute and to make a difference.",
+    achievements: [], // explicitly empty
+  };
+
   return (
     <div className="min-h-screen pt-24 flex items-center">
       <div className="container px-4 mx-auto py-20">
@@ -55,9 +65,9 @@ const DirectorsMessagePage = () => {
                 transition={{ delay: 0.6 }}
                 className="mb-6 text-lg leading-relaxed text-muted-foreground md:text-xl"
               >
-                What started as a simple act of kindness—feeding a few stray dogs in our 
-                neighborhood—has grown into something truly meaningful. Feed Paws was born 
-                out of a deep belief that every living being deserves compassion, care, 
+                What started as a simple act of kindness—feeding a few stray dogs in our
+                neighborhood—has grown into something truly meaningful. Feed Paws was born
+                out of a deep belief that every living being deserves compassion, care,
                 and a chance at a better life.
               </motion.p>
 
@@ -67,9 +77,9 @@ const DirectorsMessagePage = () => {
                 transition={{ delay: 0.7 }}
                 className="mb-6 text-lg leading-relaxed text-muted-foreground md:text-xl"
               >
-                Every day, when I see our volunteers stepping out with bowls of food and 
-                hearts full of love, I'm reminded of why we do this. The wagging tails, 
-                the grateful eyes—these moments make all the effort worthwhile. We're 
+                Every day, when I see our volunteers stepping out with bowls of food and
+                hearts full of love, I'm reminded of why we do this. The wagging tails,
+                the grateful eyes—these moments make all the effort worthwhile. We're
                 not just feeding animals; we're building a community that cares.
               </motion.p>
 
@@ -79,9 +89,9 @@ const DirectorsMessagePage = () => {
                 transition={{ delay: 0.8 }}
                 className="mb-8 text-lg leading-relaxed text-muted-foreground md:text-xl"
               >
-                To everyone who has supported us, volunteered with us, or simply shared 
-                our story—thank you. Together, we're making a difference, one meal at a 
-                time, one life at a time. This is just the beginning, and I invite you 
+                To everyone who has supported us, volunteered with us, or simply shared
+                our story—thank you. Together, we're making a difference, one meal at a
+                time, one life at a time. This is just the beginning, and I invite you
                 to be part of this beautiful journey.
               </motion.p>
 
@@ -95,11 +105,17 @@ const DirectorsMessagePage = () => {
                   With warmth and gratitude,
                 </p>
                 <p className="text-gradient font-serif text-2xl font-medium">
-                  Sayan Ghosh 
+                  Sayan Ghosh
                 </p>
               </motion.div>
             </div>
           </motion.div>
+
+          {/* Volunteer of the Year (ADDED) */}
+          <div className="mt-10">
+            {/* showYear set to false to remove year from title */}
+            <VolunteerOfYear winner={winner} others={[]} showYear={false} />
+          </div>
 
           {/* Decorative paw prints */}
           <div className="flex justify-center mt-12 gap-4">
@@ -120,22 +136,5 @@ const DirectorsMessagePage = () => {
     </div>
   );
 };
-const winner = {
-  name: "Sumedha Dev",
-  photo: "/images/volunteer-of-year/aarti.jpg",
-  year: 2025,
-  bio: " I had always dreamed of starting my own NGO... It was always something I wanted to do for manyyy yearss..But the moment our director sir (Mr. Sayan Ghosh) told me he was creating something similar, I joined him without any second thought. I didn't come here to dominate or seek control, I came here to work, to contribute and to make a difference ",
-  achievements: [""]
-  };
-export default function DirectorsPage(){
-  return (
-    <div>
-      {/* existing director content */}
-      ...
-      <VolunteerOfYear winner={winner} others={past} />
-      {/* other content */}
-    </div>
-  );
-}
 
 export default DirectorsMessagePage;
