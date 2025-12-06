@@ -65,7 +65,7 @@ const HomePage = ({
           }} transition={{
             delay: 0.2
           }}>
-              Because every paw 🐾 deserves Careh 
+              Because every paw 🐾 deserves Care
             </motion.span>
 
             <h1 className="mb-6 font-serif text-5xl leading-tight md:text-7xl text-foreground">
