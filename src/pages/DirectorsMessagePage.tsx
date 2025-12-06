@@ -93,7 +93,7 @@ const DirectorsMessagePage = () => {
                   With warmth and gratitude,
                 </p>
                 <p className="text-gradient font-serif text-2xl font-medium">
-                  The Feed Paws Team
+                  Sayan Ghosh 
                 </p>
               </motion.div>
             </div>
