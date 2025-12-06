@@ -104,7 +104,7 @@ const DirectorsMessagePage = () => {
                 <p className="font-serif text-xl text-foreground mb-1">
                   With warmth and gratitude,
                 </p>
-                <p className="text-gradient font-serif text-2xl font-medium">
+                <p className="text-foreground font-serif text-2xl font-medium">
                   Sayan Ghosh
                 </p>
               </motion.div>
