@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import VolunteerOfYear from "../components/VolunteerOfYear";
+
 
 const DirectorsMessagePage = () => {
   return (
@@ -118,5 +120,22 @@ const DirectorsMessagePage = () => {
     </div>
   );
 };
+const winner = {
+  name: "Sumedha Dev",
+  photo: "/images/volunteer-of-year/aarti.jpg",
+  year: 2025,
+  bio: " I had always dreamed of starting my own NGO... It was always something I wanted to do for manyyy yearss..But the moment our director sir (Mr. Sayan Ghosh) told me he was creating something similar, I joined him without any second thought. I didn't come here to dominate or seek control, I came here to work, to contribute and to make a difference ",
+  achievements: [""]
+  };
+export default function DirectorsPage(){
+  return (
+    <div>
+      {/* existing director content */}
+      ...
+      <VolunteerOfYear winner={winner} others={past} />
+      {/* other content */}
+    </div>
+  );
+}
 
 export default DirectorsMessagePage;
