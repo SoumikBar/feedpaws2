@@ -4,11 +4,11 @@ import { Quote } from "lucide-react";
 import VolunteerOfYear, { Winner } from "../components/VolunteerOfYear";
 
 const DirectorsMessagePage = () => {
-  // Sumedha's story as requested (no achievements)
+  // Sumedha's story as requested (no achievements) — year set to 2025
   const winner: Winner = {
     name: "Sumedha Dev",
-    // optional: add a photo at /public/images/volunteer-of-year/sumedha.jpg
-    // photo: "/images/volunteer-of-year/sumedha.jpg",
+    photo: "/images/volunteer-of-year/sumedha-dev.jpg", // add this file to public/images/volunteer-of-year/
+    year: 2025,
     bio:
       "I had always dreamed of starting my own NGO... It was always something I wanted to do for manyyy yearss.. But the moment our director sir (Mr. Sayan Ghosh) told me he was creating something similar, I joined him without any second thought. I didn't come here to dominate or seek control, I came here to work, to contribute and to make a difference.",
     achievements: [], // explicitly empty
@@ -113,8 +113,8 @@ const DirectorsMessagePage = () => {
 
           {/* Volunteer of the Year (ADDED) */}
           <div className="mt-10">
-            {/* showYear set to false to remove year from title */}
-            <VolunteerOfYear winner={winner} others={[]} showYear={false} />
+            {/* showYear set to true to display "— 2025" */}
+            <VolunteerOfYear winner={winner} others={[]} showYear={true} />
           </div>
 
           {/* Decorative paw prints */}
