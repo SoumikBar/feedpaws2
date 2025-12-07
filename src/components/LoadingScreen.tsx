@@ -71,6 +71,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
             className="mb-8 font-serif text-3xl text-foreground"
           >
             Feed Paws
+            Initiative
           </motion.h1>
 
           {/* Progress Bar */}
