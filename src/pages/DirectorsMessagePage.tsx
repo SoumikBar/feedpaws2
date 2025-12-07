@@ -6,7 +6,7 @@ import VolunteerOfYear, { Winner } from "../components/VolunteerOfYear";
 const DirectorsMessagePage = () => {
   // Sumedha's story as requested (no achievements) — year set to 2025
   const winner: Winner = {
-    name: "Sumedha Dev",
+    name: "Sumedha Deb",
     photo: "/images/volunteer-of-year/sumedha-dev.jpg", // add this file to public/images/volunteer-of-year/
     year: 2025,
     bio:
